@@ -9,10 +9,12 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, Session, make
 from flask_marshmallow import Marshmallow
 from marshmallow import fields, ValidationError
 from typing import List
+from flask_cors import CORS
 import datetime, random
 
 # create and configure app
 app = Flask(__name__)
+CORS(app)
 app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+mysqlconnector://root:Password123!@localhost/ecommerce_project_db"
 app.json.sort_keys = False
 
